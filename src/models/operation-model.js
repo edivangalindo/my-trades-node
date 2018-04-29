@@ -58,4 +58,4 @@ const schema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Trade', schema);
+module.exports = mongoose.model('Operation', schema);

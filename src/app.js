@@ -10,14 +10,17 @@ const router = express.Router();
 
 mongoose.connect(config.connectionString);
 
+// Models
+const Operation = require('./models/operation-model');
+
 // Rotas
 const index = require('./routes/index');
-const trade = require('./routes/trade');
+const operation = require('./routes/operation');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use('/', index);
-app.use('/trades', trade);
+app.use('/trades', operation);
 
 module.exports = app;
