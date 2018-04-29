@@ -15,6 +15,7 @@ const schema = new Schema({
     // Stop
     // Resultado %
     // Retorno Financeiro
+    // Gerenciamento de Risco
 
     status: {
         type: String,
@@ -54,6 +55,9 @@ const schema = new Schema({
         type: Number
     },
     financialFeedback: {
+        type: Number
+    },
+    riskManagement: {
         type: Number
     }
 });

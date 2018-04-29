@@ -13,6 +13,28 @@ exports.get = (req, res, next) => {
     });
 };
 
+exports.getById = (req, res, next) => {
+    Operation.findById(req.params.id)
+    .then(data => {
+        res.status(201).send(data);
+     })
+    .catch(e => {
+        res.status(400).send(e);
+    });
+};
+
+exports.getByStatus = (req, res, next) => {
+    Operation.find({
+        status: req.params.status
+    })
+    .then(data => {
+        res.status(201).send(data);
+     })
+    .catch(e => {
+        res.status(400).send(e);
+    });
+};
+
 exports.post = ('/', (req, res, next) => {
     let operation = new Operation(req.body);
 
